@@ -398,8 +398,8 @@ download_and_run_singbox() {
 }
 EOF
 
-    if ! ps aux | grep '[c]onfig' >/dev/null; then
-        ps aux | grep '[c]onfig' | awk '{print $2}' | xargs -r kill -9 >/dev/null 2>&1
+    if ! ps aux | grep '[c]onfig.json' >/dev/null; then
+        ps aux | grep '[c]onfig.json' | awk '{print $2}' | xargs -r kill -9 >/dev/null 2>&1
         if [ -e "$(basename "${FILE_MAP[web]}")" ]; then
             echo "$(basename "${FILE_MAP[web]}")" >sb.txt
             sbb=$(cat sb.txt)
