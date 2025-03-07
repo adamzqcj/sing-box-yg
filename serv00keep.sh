@@ -32,7 +32,7 @@ if [[ "$reset" =~ ^[Yy]$ ]]; then
 #crontab rmcron >/dev/null 2>&1
 #rm rmcron
 
-bash -c 'ps aux | grep $(whoami) | grep -v "sshd\|bash\|grep" | awk "{print \$2}" | xargs -r kill -9 >/dev/null 2>&1' >/dev/null 2>&1
+bash -c 'ps aux | grep $(whoami) | grep -v "sshd\|bash\|grep\|nezha" | awk "{print \$2}" | xargs -r kill -9 >/dev/null 2>&1' >/dev/null 2>&1
 rm -rf /usr/home/${USERNAME}/domains/${USERNAME}.serv00.net/*
 devil www del ${USERNAME}.serv00.net > /dev/null 2>&1
 sed -i '/export PATH="\$HOME\/bin:\$PATH"/d' "${HOME}/.bashrc" >/dev/null 2>&1
